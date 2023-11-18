@@ -14,7 +14,7 @@ It was made by using Python, tkinter GUI interface, OpenCV library, Haarcascade 
 - Train Photo Samples
 - Take Attendance using Face Detection 
 - Attendance Report (Excel file & MySql database) 
-- Developer Page
+- Developer Page 
 - Help Desk
 - Exit System
 
