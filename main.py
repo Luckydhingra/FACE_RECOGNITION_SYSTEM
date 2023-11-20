@@ -10,7 +10,7 @@ class Face_Recognition_System:
         self.root.title("Face Recognition System")
 
         # Header Image
-        img = Image.open(r"D:\Face Recognition Project\STUDENT-ATTENDANCE-MONITORING-SYSTEM-USING-FACE_RECOGNITION\assets\Header.png")
+        img = Image.open(r".\assets\Header.png")
         img = img.resize((1540,130),Image.LANCZOS)
         self.photoimg = ImageTk.PhotoImage(img)
 
@@ -18,7 +18,7 @@ class Face_Recognition_System:
         f_lbl.place(x=0,y=0,width=1540,height=130)
 
         # Background Image
-        img1 = Image.open(r"D:\Face Recognition Project\STUDENT-ATTENDANCE-MONITORING-SYSTEM-USING-FACE_RECOGNITION\assets\Background.jpg")
+        img1 = Image.open(r".\assets\Background.jpg")
         img1 = img1.resize((1540,660),Image.LANCZOS)
         self.photoimg1 = ImageTk.PhotoImage(img1)
 
