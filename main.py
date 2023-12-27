@@ -1,7 +1,10 @@
 from tkinter import *
 from tkinter import ttk
 from PIL import Image, ImageTk
+import os
 from student import Student
+from train import Train
+
 
 
 class Face_Recognition_System:
@@ -73,15 +76,15 @@ class Face_Recognition_System:
         b4_l = Button(bg_img,text="Help",cursor="hand2",font=("times new roman",15,"bold"),bg="darkblue",fg="white")
         b4_l.place(x=1100,y=300,width=220,height=40)
 
-        # Model Training Button
+        # Training the Algorithm Button
         img6 = Image.open(r".\assets\Model_Training.png")
         img6 = img6.resize((220,220),Image.LANCZOS)
         self.photoimg6 = ImageTk.PhotoImage(img6)
 
-        b5 = Button(bg_img,image=self.photoimg6,cursor="hand2")
+        b5 = Button(bg_img,image=self.photoimg6,cursor="hand2", command=self.train_algo)
         b5.place(x=200,y=380,width=220,height=220)
 
-        b5_l = Button(bg_img,text="Model Training",cursor="hand2",font=("times new roman",15,"bold"),bg="darkblue",fg="white")
+        b5_l = Button(bg_img,text="Algorithm Training",cursor="hand2", command=self.train_algo,font=("times new roman",15,"bold"),bg="darkblue",fg="white")
         b5_l.place(x=200,y=580,width=220,height=40)
 
         # Photos Button
@@ -89,10 +92,10 @@ class Face_Recognition_System:
         img7 = img7.resize((220,220),Image.LANCZOS)
         self.photoimg7 = ImageTk.PhotoImage(img7)
 
-        b6 = Button(bg_img,image=self.photoimg7,cursor="hand2")
+        b6 = Button(bg_img,image=self.photoimg7,cursor="hand2", command=self.open_img)
         b6.place(x=500,y=380,width=220,height=220)
 
-        b6_l = Button(bg_img,text="Photos",cursor="hand2",font=("times new roman",15,"bold"),bg="darkblue",fg="white")
+        b6_l = Button(bg_img,text="Photos",cursor="hand2", command=self.open_img, font=("times new roman",15,"bold"),bg="darkblue",fg="white")
         b6_l.place(x=500,y=580,width=220,height=40)
 
         # Developers Button
@@ -116,11 +119,19 @@ class Face_Recognition_System:
 
         b8_l = Button(bg_img,text="Exit",cursor="hand2",font=("times new roman",15,"bold"),bg="darkblue",fg="white")
         b8_l.place(x=1100,y=580,width=220,height=40)
+    
+    def open_img(self):
+        os.startfile("data")
 
     # Buttons functions
     def student_details(self):
         self.new_window = Toplevel(self.root)
         self.app = Student(self.new_window)
+        
+    def train_algo(self):
+        self.new_window = Toplevel(self.root)
+        self.app = Train(self.new_window)
+
 
 if __name__ == "__main__":
     root = Tk()

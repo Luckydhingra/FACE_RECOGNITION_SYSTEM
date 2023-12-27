@@ -374,7 +374,7 @@ class Student:
             messagebox.showerror("Error","All fields are required.",parent=self.root)
         else:
             try:
-                update = messagebox.askyesno("Update","Do you want to update this stuent details?",parent=self.root)
+                update = messagebox.askyesno("Update","Do you want to update this stud7ent details?",parent=self.root)
                 if update>0:
                     conn = mysql.connector.connect(host="localhost",user="root",password="4321",database="face_recognizer")
                     my_cursor = conn.cursor()
