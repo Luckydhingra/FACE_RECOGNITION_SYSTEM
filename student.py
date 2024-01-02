@@ -17,12 +17,12 @@ class Student:
         self.var_course= StringVar()
         self.var_year= StringVar()
         self.var_sem= StringVar()
-        self.var_roll= StringVar()
-        self.var_reg_no= StringVar()
+        self.var_Student_id= StringVar()
         self.var_name= StringVar()
         self.var_div= StringVar()
-        self.var_dob= StringVar()
+        self.var_roll= StringVar()
         self.var_gender= StringVar()
+        self.var_dob= StringVar()
         self.var_email= StringVar()
         self.var_phone= StringVar()
         self.var_address= StringVar()
@@ -107,12 +107,12 @@ class Student:
         classStudent_frame = LabelFrame(Left_frame, bd=2, bg="white", relief=RIDGE, text="Class Student Information", font=("times new roman", 13, "bold"))
         classStudent_frame.place(x=5, y=250, width=750, height=300)
 
-        # Registration No.
-        regNo_label = Label(classStudent_frame, text="Registration No:", font=("times new roman", 13, "bold"), bg="white")
-        regNo_label.grid(row=0, column=0, padx=10, pady=5, sticky=W)
+        # Student ID
+        Student_id_label = Label(classStudent_frame, text="Student ID:", font=("times new roman", 13, "bold"), bg="white")
+        Student_id_label.grid(row=0, column=0, padx=10, pady=5, sticky=W)
 
-        regNo_entry = ttk.Entry(classStudent_frame, textvariable=self.var_reg_no, width=20, font=("times new roman", 13, "bold"))
-        regNo_entry.grid(row=0, column=1, padx=10, pady=5, sticky=W)
+        Student_id_entry = ttk.Entry(classStudent_frame, textvariable=self.var_Student_id, width=20, font=("times new roman", 13, "bold"))
+        Student_id_entry.grid(row=0, column=1, padx=10, pady=5, sticky=W)
 
         # Student Name
         studentName_label = Label(classStudent_frame, text="Student Name:", font=("times new roman", 13, "bold"), bg="white")
@@ -254,23 +254,23 @@ class Student:
         scroll_x = ttk.Scrollbar(table_frame, orient=HORIZONTAL)
         scroll_y = ttk.Scrollbar(table_frame, orient=VERTICAL)
 
-        self.student_table = ttk.Treeview(table_frame, columns=("dep","course","year","sem","roll","reg_no","name","div","dob","gender","email","phone","address","teacher","photo"),xscrollcommand=scroll_x.set, yscrollcommand=scroll_y.set)
+        self.student_table = ttk.Treeview(table_frame, columns=("dep","course","year","sem","Student_id","name","div","roll","gender","dob","email","phone","address","teacher","photo"),xscrollcommand=scroll_x.set, yscrollcommand=scroll_y.set)
         scroll_x.pack(side=BOTTOM, fill=X)
         scroll_y.pack(side=RIGHT, fill=Y)
         scroll_x.config(command=self.student_table.xview)
         scroll_y.config(command=self.student_table.yview)
 
-        # "dep","course","year","sem","roll","reg_no","name","div","dob","gender","email","phone","address","teacher","photo"
+        # "dep","course","year","sem","Student_id","name","div","roll","gender","dob","email","phone","address","teacher","photo"
         self.student_table.heading("dep",text="Department")
         self.student_table.heading("course",text="Course")
         self.student_table.heading("year",text="Year")
         self.student_table.heading("sem",text="Semester")
-        self.student_table.heading("roll",text="Roll No.")
-        self.student_table.heading("reg_no",text="Registration No.")
+        self.student_table.heading("Student_id",text="Student ID")
         self.student_table.heading("name",text="Name")
         self.student_table.heading("div",text="Division")
-        self.student_table.heading("dob",text="DOB")
+        self.student_table.heading("roll",text="Roll No.")
         self.student_table.heading("gender",text="Gender")
+        self.student_table.heading("dob",text="DOB")
         self.student_table.heading("email",text="Email")
         self.student_table.heading("phone",text="Phone No.")
         self.student_table.heading("address",text="Address")
@@ -282,12 +282,12 @@ class Student:
         self.student_table.column("course",width=100)
         self.student_table.column("year",width=100)
         self.student_table.column("sem",width=100)
-        self.student_table.column("roll",width=100)
-        self.student_table.column("reg_no",width=100)
+        self.student_table.column("Student_id",width=100)
         self.student_table.column("name",width=100)
         self.student_table.column("div",width=100)
-        self.student_table.column("dob",width=100)
+        self.student_table.column("roll",width=100)
         self.student_table.column("gender",width=100)
+        self.student_table.column("dob",width=100)
         self.student_table.column("email",width=100)
         self.student_table.column("phone",width=100)
         self.student_table.column("address",width=100)
@@ -302,7 +302,7 @@ class Student:
         
     # saving data into database
     def add_data(self):
-        if self.var_dep.get() == "Select Department" or self.var_course.get() == "Select Course" or self.var_year.get() == "Select Year" or self.var_sem.get() == "Select Semester" or self.var_roll.get() == "" or self.var_reg_no.get() == "" or self.var_name.get() == "" or self.var_div.get() == "" or self.var_dob.get() == "" or self.var_gender.get() == "Select Gender" or self.var_email.get() == "" or self.var_phone.get() == "" or self.var_address.get() == "" or self.var_teacher.get() == "":
+        if self.var_dep.get() == "Select Department" or self.var_course.get() == "Select Course" or self.var_year.get() == "Select Year" or self.var_sem.get() == "Select Semester" or self.var_roll.get() == "" or self.var_Student_id.get() == "" or self.var_name.get() == "" or self.var_div.get() == "" or self.var_dob.get() == "" or self.var_gender.get() == "Select Gender" or self.var_email.get() == "" or self.var_phone.get() == "" or self.var_address.get() == "" or self.var_teacher.get() == "":
             messagebox.showerror("Error","All fields are required.",parent=self.root)
         else:
             try:
@@ -313,7 +313,7 @@ class Student:
                                                                                                                                 self.var_course.get(),
                                                                                                                                 self.var_year.get(),
                                                                                                                                 self.var_sem.get(),
-                                                                                                                                self.var_reg_no.get(),
+                                                                                                                                self.var_Student_id.get(),
                                                                                                                                 self.var_name.get(),
                                                                                                                                 self.var_div.get(),
                                                                                                                                 self.var_roll.get(),
@@ -356,7 +356,7 @@ class Student:
         self.var_course.set(data[1]),
         self.var_year.set(data[2]),
         self.var_sem.set(data[3]),
-        self.var_reg_no.set(data[4]),
+        self.var_Student_id.set(data[4]),
         self.var_name.set(data[5]),
         self.var_div.set(data[6]),
         self.var_roll.set(data[7]),
@@ -370,15 +370,15 @@ class Student:
 
     # Update function
     def update_data(self):
-        if self.var_dep.get() == "Select Department" or self.var_course.get() == "Select Course" or self.var_year.get() == "Select Year" or self.var_sem.get() == "Select Semester" or self.var_roll.get() == "" or self.var_reg_no.get() == "" or self.var_name.get() == "" or self.var_div.get() == "" or self.var_dob.get() == "" or self.var_gender.get() == "Select Gender" or self.var_email.get() == "" or self.var_phone.get() == "" or self.var_address.get() == "" or self.var_teacher.get() == "":
+        if self.var_dep.get() == "Select Department" or self.var_course.get() == "Select Course" or self.var_year.get() == "Select Year" or self.var_sem.get() == "Select Semester" or self.var_roll.get() == "" or self.var_Student_id.get() == "" or self.var_name.get() == "" or self.var_div.get() == "" or self.var_dob.get() == "" or self.var_gender.get() == "Select Gender" or self.var_email.get() == "" or self.var_phone.get() == "" or self.var_address.get() == "" or self.var_teacher.get() == "":
             messagebox.showerror("Error","All fields are required.",parent=self.root)
         else:
             try:
-                update = messagebox.askyesno("Update","Do you want to update this stud7ent details?",parent=self.root)
+                update = messagebox.askyesno("Update","Do you want to update this student details?",parent=self.root)
                 if update>0:
                     conn = mysql.connector.connect(host="localhost",user="root",password="4321",database="face_recognizer")
                     my_cursor = conn.cursor()
-                    my_cursor.execute("Update student set Dep=%s,course=%s,Year=%s,Semester=%s,Name=%s,Division=%s,Roll=%s,Gender=%s,Dob=%s,Email=%s,Phone=%s,Address=%s,Teacher=%s,PhotoSample=%s where reg_no=%s",(
+                    my_cursor.execute("Update student set Dep=%s,course=%s,Year=%s,Semester=%s,Name=%s,Division=%s,Roll=%s,Gender=%s,Dob=%s,Email=%s,Phone=%s,Address=%s,Teacher=%s,PhotoSample=%s where Student_id=%s",(
                                                                                                                                                                                                         self.var_dep.get(),
                                                                                                                                                                                                         self.var_course.get(),
                                                                                                                                                                                                         self.var_year.get(),
@@ -393,7 +393,7 @@ class Student:
                                                                                                                                                                                                         self.var_address.get(),
                                                                                                                                                                                                         self.var_teacher.get(),
                                                                                                                                                                                                         self.var_radio1.get(),
-                                                                                                                                                                                                        self.var_reg_no.get()
+                                                                                                                                                                                                        self.var_Student_id.get()
                                                                                                                                                                                                     ))
                 else:
                     if not update:
@@ -407,16 +407,16 @@ class Student:
 
     #delete function
     def delete_data(self):
-        if self.var_reg_no.get() == "":
-            messagebox.showerror("Error","Student Registration No. must be required.",parent=self.root)
+        if self.var_Student_id.get() == "":
+            messagebox.showerror("Error","Student ID No. must be required.",parent=self.root)
         else:
             try:
                 delete=messagebox.askyesno("Delete!","Do you want to delete this student?",parent=self.root)
                 if delete>0:
                     conn = mysql.connector.connect(host="localhost",user="root",password="4321",database="face_recognizer")
                     my_cursor = conn.cursor()
-                    sql="delete from student where reg_no=%s"
-                    val = (self.var_reg_no.get(),)
+                    sql="delete from student where Student_id=%s"
+                    val = (self.var_Student_id.get(),)
                     my_cursor.execute(sql,val)
                 else:
                     if not delete:
@@ -434,7 +434,7 @@ class Student:
         self.var_course.set("Select Course")
         self.var_year.set("Select Year")
         self.var_sem.set("Select Semester")
-        self.var_reg_no.set("")
+        self.var_Student_id.set("")
         self.var_name.set("")
         self.var_div.set("Select Division")
         self.var_roll.set("")
@@ -448,7 +448,7 @@ class Student:
 
     # Generate data set or Take photo Samples
     def generate_dataset(self):
-        if self.var_dep.get() == "Select Department" or self.var_course.get() == "Select Course" or self.var_year.get() == "Select Year" or self.var_sem.get() == "Select Semester" or self.var_roll.get() == "" or self.var_reg_no.get() == "" or self.var_name.get() == "" or self.var_div.get() == "" or self.var_dob.get() == "" or self.var_gender.get() == "Select Gender" or self.var_email.get() == "" or self.var_phone.get() == "" or self.var_address.get() == "" or self.var_teacher.get() == "":
+        if self.var_dep.get() == "Select Department" or self.var_course.get() == "Select Course" or self.var_year.get() == "Select Year" or self.var_sem.get() == "Select Semester" or self.var_roll.get() == "" or self.var_Student_id.get() == "" or self.var_name.get() == "" or self.var_div.get() == "" or self.var_dob.get() == "" or self.var_gender.get() == "Select Gender" or self.var_email.get() == "" or self.var_phone.get() == "" or self.var_address.get() == "" or self.var_teacher.get() == "":
             messagebox.showerror("Error","All fields are required.",parent=self.root)
         else:
             try:
@@ -459,7 +459,7 @@ class Student:
                 id=0
                 for x in myresult:
                     id+=1
-                my_cursor.execute("Update student set Dep=%s,course=%s,Year=%s,Semester=%s,Name=%s,Division=%s,Roll=%s,Gender=%s,Dob=%s,Email=%s,Phone=%s,Address=%s,Teacher=%s,PhotoSample=%s where reg_no=%s",(
+                my_cursor.execute("Update student set Dep=%s,course=%s,Year=%s,Semester=%s,Name=%s,Division=%s,Roll=%s,Gender=%s,Dob=%s,Email=%s,Phone=%s,Address=%s,Teacher=%s,PhotoSample=%s where Student_id=%s",(
                                                                                                                                                                                                         self.var_dep.get(),
                                                                                                                                                                                                         self.var_course.get(),
                                                                                                                                                                                                         self.var_year.get(),
@@ -474,7 +474,7 @@ class Student:
                                                                                                                                                                                                         self.var_address.get(),
                                                                                                                                                                                                         self.var_teacher.get(),
                                                                                                                                                                                                         self.var_radio1.get(),
-                                                                                                                                                                                                        self.var_reg_no.get()==id+1
+                                                                                                                                                                                                        self.var_Student_id.get()==id+1
                                                                                                                                                                                                     ))
                 conn.commit()
                 self.fetch_data()
