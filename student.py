@@ -68,7 +68,7 @@ class Student:
         currentCourse_frame.place(x=5, y=135, width=750, height=115)
 
         # Department
-        dep_label = Label(currentCourse_frame, text="Department", font=("times new roman", 13, "bold"), bg="white")
+        dep_label = Label(currentCourse_frame, text="Department:", font=("times new roman", 13, "bold"), bg="white")
         dep_label.grid(row=0, column=0, padx=10, sticky=W)
 
         dep_combo = ttk.Combobox(currentCourse_frame, textvariable=self.var_dep, font=("times new roman", 13, "bold"), state="readonly", width=20)
@@ -77,7 +77,7 @@ class Student:
         dep_combo.grid(row=0, column=1, padx=2, pady=10, sticky=W)
 
         # Course
-        course_label = Label(currentCourse_frame, text="Course", font=("times new roman", 13, "bold"), bg="white")
+        course_label = Label(currentCourse_frame, text="Course:", font=("times new roman", 13, "bold"), bg="white")
         course_label.grid(row=0, column=2, padx=10, sticky=W)
 
         course_combo = ttk.Combobox(currentCourse_frame, textvariable=self.var_course, font=("times new roman", 13, "bold"), state="readonly", width=20)
@@ -86,7 +86,7 @@ class Student:
         course_combo.grid(row=0, column=3, padx=2, pady=10, sticky=W)
 
         #  Year
-        year_label = Label(currentCourse_frame, text="Year", font=("times new roman", 13, "bold"), bg="white")
+        year_label = Label(currentCourse_frame, text="Year:", font=("times new roman", 13, "bold"), bg="white")
         year_label.grid(row=1, column=0, padx=10, sticky=W)
 
         year_combo = ttk.Combobox(currentCourse_frame, textvariable=self.var_year, font=("times new roman", 13, "bold"), state="readonly", width=20)
@@ -95,7 +95,7 @@ class Student:
         year_combo.grid(row=1, column=1, padx=2, pady=10, sticky=W)
 
         # Semester
-        semester_label = Label(currentCourse_frame, text="Semester", font=("times new roman", 13, "bold"), bg="white")
+        semester_label = Label(currentCourse_frame, text="Semester:", font=("times new roman", 13, "bold"), bg="white")
         semester_label.grid(row=1, column=2, padx=10, sticky=W)
 
         semester_combo = ttk.Combobox(currentCourse_frame, textvariable=self.var_sem, font=("times new roman", 13, "bold"), state="readonly", width=20)
