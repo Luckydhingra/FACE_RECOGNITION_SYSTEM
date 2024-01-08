@@ -91,7 +91,7 @@ class Face_Recognition_System:
         b4 = Button(bg_img,image=self.photoimg5,cursor="hand2")
         b4.place(x=1100,y=100,width=220,height=220)
 
-        b4_l = Button(bg_img,text="Help",command=self.help,cursor="hand2",font=("times new roman",15,"bold"),bg="darkblue",fg="white")
+        b4_l = Button(bg_img,text="Help",command=self.help_data,cursor="hand2",font=("times new roman",15,"bold"),bg="darkblue",fg="white")
         b4_l.place(x=1100,y=300,width=220,height=40)
 
         # Training the Algorithm Button
@@ -135,7 +135,7 @@ class Face_Recognition_System:
         b8 = Button(bg_img,image=self.photoimg9,cursor="hand2")
         b8.place(x=1100,y=380,width=220,height=220)
 
-        b8_l = Button(bg_img,text="Exit",cursor="hand2",font=("times new roman",15,"bold"),bg="darkblue",fg="white")
+        b8_l = Button(bg_img,text="Exit",cursor="hand2",command=self.exit,font=("times new roman",15,"bold"),bg="darkblue",fg="white")
         b8_l.place(x=1100,y=580,width=220,height=40)
     
     def open_img(self):
@@ -161,10 +161,17 @@ class Face_Recognition_System:
     def developer_data(self):
         self.new_window = Toplevel(self.root)
         self.app = Developer(self.new_window)
-    def help(self):
+        
+    def help_data(self):
         self.new_window = Toplevel(self.root)
         self.app = Help(self.new_window)        
 
+    def exit(self):
+        self.exit = messagebox.askyesno("Face Recognition System", "Are you sure exit this project", parent=self.root)
+        if self.exit > 0:
+            self.root.destroy()
+        else:
+            return
 
 if __name__ == "__main__":
     root = Tk()

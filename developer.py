@@ -75,7 +75,7 @@ class Developer:
         f_lbl2.place(x=100,y=10,width=200,height=200)
         
         # Developer2 info
-        name_label2 = Label(main_frame2, text="Lucky", font=("times new roman", 20, "bold"),fg="blue", bg="skyblue")
+        name_label2 = Label(main_frame2, text="Lucky (Rudra0_0)", font=("times new roman", 20, "bold"),fg="blue", bg="skyblue")
         name_label2.place(x=90,y=220)
         
         w_label2 = Label(main_frame2, text="Open-Source-Evangelist", font=("times new roman", 20, "bold"),fg="blue", bg="skyblue")
