@@ -10,13 +10,7 @@ from developer import Developer
 from help import Help
 from tkinter import messagebox
 import mysql.connector
-
-
-
-
-   
-                            
-
+from time import gmtime, strftime
 
 class Face_Recognition_System:
     def __init__(self, root):
@@ -41,8 +35,18 @@ class Face_Recognition_System:
         bg_img = Label(self.root, image=self.photoimg1)
         bg_img.place(x=0,y=130,width=1540,height=660)
 
-        title_lbl = Label(bg_img,text="STUDENT ATTENDANCE MONITORING SYSTEM USING FACE RECOGNITION",font=("times new roman",25,"bold"),bg="white",fg="red")
+        title_lbl = Label(bg_img,text="Face Recognition System",font=("times new roman",25,"bold"),bg="white",fg="red")
         title_lbl.place(x=0,y=0,width=1540,height=45) 
+        
+         # current Time
+        def time():
+            string = strftime('%H:%M:%S %p')
+            lbl.config(text = string)
+            lbl.after(1000, time)
+            
+        lbl = Label(title_lbl, font=('times new roman',14,'bold'), background='white', foreground='blue')
+        lbl.place(x=0, y=0,width=110, height=50)
+        time()
 
         # Student Details Button
         img2 = Image.open(r".\assets\Students.png")

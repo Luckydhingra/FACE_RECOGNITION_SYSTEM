@@ -16,14 +16,15 @@ class Developer:
         self.root.iconbitmap('assets/logo_PI6_icon.ico')
         
         
-        title_lbl = Label(self.root,text="DEVELOPERS",font=("times new roman",25,"bold"),bg="white",fg="blue")
+        
+        title_lbl = Label(self.root,text="DEVELOPERS",font=("times new roman",25,"bold"),bg="black",fg="white")
         title_lbl.place(x=0,y=0,width=1540,height=45)
         
-        Back_Button = Button(title_lbl, text="Back", command=self.root.destroy, font=("timws new roman",11,"bold"),width=17,bg="white",fg="red")
+        Back_Button = Button(title_lbl, text="Back", command=self.root.destroy, font=("times new roman",11,"bold"),width=17,bg="darkblue",fg="white")
         Back_Button.pack(side=RIGHT)
 
-        img_top = Image.open(r".\assets\Banner.jpg")
-        img_top = img_top.resize((1540,740),Image.LANCZOS)
+        img_top = Image.open(r".\assets\Bg.png")
+        img_top = img_top.resize((1540,780),Image.LANCZOS)
         self.photoimg_top = ImageTk.PhotoImage(img_top)
 
         f_lbl = Label(self.root, image=self.photoimg_top)
@@ -31,10 +32,10 @@ class Developer:
         
         # Contributor 1
         # Main Frame
-        main_frame1 = Frame(f_lbl, bd=2, bg="white")
-        main_frame1.place(x=285, y=10, width=400, height=500)
+        main_frame1 = Frame(f_lbl, bd=2, bg="skyblue")
+        main_frame1.place(x=285, y=100, width=400, height=450)
         
-        img1 = Image.open(r".\assets\Banner.jpg")
+        img1 = Image.open(r".\assets\Kunal.png")
         img1 = img1.resize((200,200),Image.LANCZOS)
         self.photoimg1 = ImageTk.PhotoImage(img1)
 
@@ -42,35 +43,31 @@ class Developer:
         f_lbl1.place(x=100,y=10,width=200,height=200)
         
         # Developer1 info
-        name_label1 = Label(main_frame1, text="Kunal Kathpal", font=("times new roman", 20, "bold"),fg="blue", bg="white")
+        name_label1 = Label(main_frame1, text="Kunal Kathpal", font=("times new roman", 20, "bold"),fg="blue", bg="skyblue")
         name_label1.place(x=100,y=220)
         
-        w_label1 = Label(main_frame1, text="Full Stack Developer", font=("times new roman", 20, "bold"),fg="blue", bg="white")
+        w_label1 = Label(main_frame1, text="Full Stack Developer", font=("times new roman", 20, "bold"),fg="blue", bg="skyblue")
         w_label1.place(x=100,y=260)
         
-        p_label1 = Label(main_frame1, text="Student, 7th Semester", font=("times new roman", 14, "bold"),fg="black", bg="white")
+        p_label1 = Label(main_frame1, text="Student", font=("times new roman", 14, "bold"),fg="black", bg="skyblue")
         p_label1.place(x=100,y=300)
         
-        c_label1 = Label(main_frame1, text="CRSSIET, Jhajjar", font=("times new roman", 14, "bold"),fg="black", bg="white")
+        c_label1 = Label(main_frame1, text="CRS-SIET, Jhajjar", font=("times new roman", 14, "bold"),fg="black", bg="skyblue")
         c_label1.place(x=100,y=320)
         
-        github_btn1 = Button(main_frame1, text="Github", width=18, font=("times new roman",16,"bold"), bg="black", fg="white", cursor="hand2")
-        github_btn1.place(x=100, y=350)
-        github_btn1.bind('<Button-1>',
-                   lambda x:webbrowser.open_new("https://www.github.com/kunal-2002"))
-        
-        linkedin_btn1 = Button(main_frame1, text="Linkedin", width=18, font=("times new roman",16,"bold"), bg="black", fg="white", cursor="hand2")
-        linkedin_btn1.place(x=100, y=400)
-        linkedin_btn1.bind('<Button-1>',
+        aboutme_btn2 = Button(main_frame1, text="About me",width=18, font=("times new roman",16,"bold"), bg="blue", fg="white", cursor="hand2")
+        aboutme_btn2.place(x=100, y=350)
+        aboutme_btn2.bind ('<Button-1>',
                    lambda x:webbrowser.open_new("https://www.linkedin.com/in/kunal-kathpal"))
-    
+        
+              
 
         # Contributor 2
         # Main Frame
-        main_frame2 = Frame(f_lbl, bd=2, bg="white")
-        main_frame2.place(x=855, y=10, width=400, height=500)
+        main_frame2 = Frame(f_lbl, bd=2, bg="skyblue")
+        main_frame2.place(x=855, y=100, width=400, height=450)
         
-        img2 = Image.open(r".\assets\Banner.jpg")
+        img2 = Image.open(r".\assets\Lucky.jpg")
         img2 = img2.resize((200,200),Image.LANCZOS)
         self.photoimg2 = ImageTk.PhotoImage(img2)
 
@@ -78,27 +75,24 @@ class Developer:
         f_lbl2.place(x=100,y=10,width=200,height=200)
         
         # Developer2 info
-        name_label2 = Label(main_frame2, text="Lucky", font=("times new roman", 20, "bold"),fg="blue", bg="white")
-        name_label2.place(x=100,y=220)
+        name_label2 = Label(main_frame2, text="Lucky", font=("times new roman", 20, "bold"),fg="blue", bg="skyblue")
+        name_label2.place(x=90,y=220)
         
-        w_label2 = Label(main_frame2, text="Full Stack Developer", font=("times new roman", 20, "bold"),fg="blue", bg="white")
-        w_label2.place(x=100,y=260)
+        w_label2 = Label(main_frame2, text="Open-Source-Evangelist", font=("times new roman", 20, "bold"),fg="blue", bg="skyblue")
+        w_label2.place(x=90,y=260)
         
-        p_label2 = Label(main_frame2, text="Student, 7th Semester", font=("times new roman", 14, "bold"),fg="black", bg="white")
-        p_label2.place(x=100,y=300)
+        p_label2 = Label(main_frame2, text="Student", font=("times new roman", 14, "bold"),fg="black", bg="skyblue")
+        p_label2.place(x=90,y=300)
         
-        c_label2 = Label(main_frame2, text="CRSSIET, Jhajjar", font=("times new roman", 14, "bold"),fg="black", bg="white")
-        c_label2.place(x=100,y=320)
+        c_label2 = Label(main_frame2, text="CRS-SIET, Jhajjar", font=("times new roman", 14, "bold"),fg="black", bg="skyblue")
+        c_label2.place(x=90,y=320)
         
-        github_btn2 = Button(main_frame2, text="Github",width=18, font=("times new roman",16,"bold"), bg="black", fg="white", cursor="hand2")
-        github_btn2.place(x=100, y=350)
-        github_btn2.bind('<Button-1>',
-                   lambda x:webbrowser.open_new("https://www.github.com/Luckydhingra"))
+        aboutme_btn2 = Button(main_frame2, text="About me",width=18, font=("times new roman",16,"bold"), bg="blue", fg="white", cursor="hand2")
+        aboutme_btn2.place(x=100, y=350)
+        aboutme_btn2.bind('<Button-1>',
+                   lambda x:webbrowser.open_new("https://rudra0_0.bio.link/"))
         
-        linkedin_btn2 = Button(main_frame2, text="Linkedin", width=18, font=("times new roman",16,"bold"), bg="black", fg="white", cursor="hand2")
-        linkedin_btn2.place(x=100, y=400)
-        linkedin_btn2.bind('<Button-1>',
-                   lambda x:webbrowser.open_new("https://www.linkedin.com/in/lucky-dhingra"))
+        
         
         
 if __name__ == "__main__":
