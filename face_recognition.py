@@ -16,6 +16,7 @@ class Face_Recognition:
         self.root = root
         self.root.geometry("1540x790+0+0")
         self.root.title("Face Recognition System")
+        self.root.iconbitmap('assets/logo_PI6_icon.ico')
         
         title_lbl = Label(self.root,text="FACE RECOGNITION",font=("times new roman",25,"bold"),bg="white",fg="Green")
         title_lbl.place(x=0,y=0,width=1540,height=45)
@@ -39,6 +40,9 @@ class Face_Recognition:
         # Button
         b1_l = Button(f_lbl,text="Face Recognition",command=self.face_recog, cursor="hand2",font=("times new roman",18,"bold"),bg="darkgreen",fg="white")
         b1_l.place(x=340,y=620,width=200,height=40)
+        Back_Button = Button(title_lbl, text="Back", command=self.root.destroy, font=("times new roman",11,"bold"),width=17,bg="darkblue",fg="white")
+        Back_Button.pack(side=RIGHT)
+
         
     # Attendance
     def mark_attendance(self,i,r,n,d):

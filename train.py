@@ -13,6 +13,7 @@ class Train:
         self.root = root
         self.root.geometry("1540x790+0+0")
         self.root.title("Face Recognition System")
+        self.root.iconbitmap('assets/logo_PI6_icon.ico')
 
 
         title_lbl = Label(self.root,text="TRAINING THE ALGORITHM",font=("times new roman",25,"bold"),bg="white",fg="red")
@@ -26,6 +27,8 @@ class Train:
         f_lbl.place(x=0,y=55,width=1540,height=325)
 
         # button
+        Back_Button = Button(title_lbl, text="Back", command=self.root.destroy, font=("times new roman",11,"bold"),width=17,bg="darkblue",fg="white")
+        Back_Button.pack(side=RIGHT)
         b1_l = Button(self.root,text="TRAIN ALGORITHM", command=self.train_classifier, cursor="hand2",font=("times new roman",30,"bold"),bg="red",fg="white")
         b1_l.place(x=0,y=380,width=1540,height=60)
 

@@ -14,6 +14,7 @@ class Attendance:
         self.root = root
         self.root.geometry("1540x790+0+0")
         self.root.title("Face Recognition System")
+        self.root.iconbitmap('assets/logo_PI6_icon.ico')
         
         # variables
         self.var_studentID = StringVar()
@@ -42,6 +43,10 @@ class Attendance:
 
         title_lbl = Label(bg_img,text="ATTENDANCE MANAGEMENT SYSTEM",font=("times new roman",25,"bold"),bg="white",fg="darkgreen")
         title_lbl.place(x=0,y=0,width=1540,height=45)
+        
+        #Button
+        Back_Button = Button(title_lbl, text="Back", command=self.root.destroy, font=("times new roman",11,"bold"),width=17,bg="darkblue",fg="white")
+        Back_Button.pack(side=RIGHT)
         
         # Main Frame
         main_frame = Frame(bg_img, bd=2, bg="white")
